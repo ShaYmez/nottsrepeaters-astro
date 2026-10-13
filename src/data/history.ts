@@ -104,7 +104,7 @@ export const history: HistoryEntry[] = [
     text: "GB7NR returns to the original MMDVM Motorola radios, running Pi-Star. DMR stays on SystemX. D-Star returns, linked to XLX248 module P.",
     more: [
       "The DR3000 and the IP Site Connect link were taken out. GB7NR went back to the MMDVM and Motorola radios it was built with, this time running Pi-Star. DMR remained on SystemX. D-Star came back, linked to XLX248 module P.",
-      "The static groups are TG 235 on slot 1, and TG 2350, TG 23590 and TG 23591 on slot 2. TG 23516, TGIF 116, is on slot 2 as well, but only some of the time. GB3NF links to the FreeSTAR hub, AllStar node 2196, and is dropped when there is QRM. GB3NM stays a standalone 25 kHz FM box, with the DMR in its DR3000 switched off.",
+      "The static groups are TG 235 on slot 1, and TG 2350, TG 23590 and TG 23591 on slot 2. TG 23516, TGIF 116, is on slot 2 as well, but only some of the time. GB3NF is AllStar node 40070. It links to the FreeSTAR hub, node 2196, and is dropped when there is QRM. GB3NM stays a standalone 25 kHz FM box, with the DMR in its DR3000 switched off.",
       "This site, nottsrepeaters.org, replaces the public pages that had been split across gb7nr.co.uk and gb3nf.co.uk.",
     ],
   },

@@ -23,7 +23,7 @@ Edit `src/data/stations.ts` when a frequency, mode, or link changes. News-style 
 
 ## Still to confirm
 
-- GB3NF's own AllStar node number, and whether EchoLink GB3NF-R 564542 is still proxied.
+- Whether EchoLink GB3NF-R 564542 is still proxied.
 - A group donation link. Contact is shane@freestar.network.
 
 The old site archive is `C:\Users\shane\gb7nr.co.uk`.

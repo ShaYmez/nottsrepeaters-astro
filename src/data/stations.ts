@@ -41,7 +41,7 @@ export interface Station {
  * on 13 Oct 2026. Names are from the SystemX dashboard.
  *
  * Held back until confirmed:
- * - GB3NF links only to FreeSTAR hub 2196. Its own AllStar node number is not published.
+ * - GB3NF is AllStar node 40070. It links only to FreeSTAR hub 2196.
  * - EchoLink GB3NF-R, node 564542, from the old gb3nf.co.uk services page.
  * - Precise site coordinates. GB3NF and GB3NM are withheld on the ETCC record.
  */
@@ -95,7 +95,7 @@ export const stations: Station[] = [
     band: "2m",
     channel: "RV50",
     mode: "FM AllStar",
-    summary: "2m FM repeater. It links to the FreeSTAR hub, AllStar node 2196.",
+    summary: "2m FM repeater. Connect on AllStar node 40070. It links to the FreeSTAR hub, node 2196.",
     outputMHz: "145.6250",
     inputMHz: "145.0250",
     status: "On air",
@@ -107,6 +107,7 @@ export const stations: Station[] = [
       { label: "Channel", value: "RV50" },
     ],
     operation: [
+      { label: "AllStar node", value: "40070" },
       { label: "Hub", value: "FreeSTAR 2196" },
       { label: "Connection", value: "Usually linked. Dropped when there is QRM." },
       { label: "User control", value: "DTMF is switched off" },
