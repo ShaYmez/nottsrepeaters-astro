@@ -399,6 +399,43 @@ td a {
   font-size: 0.92rem;
 }
 
+.history-more {
+  margin-top: 0.35rem;
+}
+
+.history-more summary {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--signal);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  list-style: none;
+}
+
+.history-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.history-more summary:hover {
+  text-decoration: underline;
+}
+
+.history-more .more-open {
+  display: none;
+}
+
+.history-more[open] .more-closed {
+  display: none;
+}
+
+.history-more[open] .more-open {
+  display: inline;
+}
+
+.history-more p {
+  margin: 0.75rem 0 0;
+}
+
 .button {
   display: inline-block;
   margin: 0.4rem 0 1rem;

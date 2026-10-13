@@ -7,9 +7,9 @@ import { history, historyPhotos } from "../data/history";
   title="History"
   description="How GB7NR, GB3NF, and GB3NM came to be the Nottingham repeater group."
 >
-  <p class="kicker">2019–2026</p>
+  <p class="kicker">1977–2026</p>
   <h1>History</h1>
-  <p class="lead">A short record of the three stations. The station pages describe them as they are now.</p>
+  <p class="lead">How the three stations came to be. Open a year for the rest of the story.</p>
   <div class="photo-grid">
     {
       historyPhotos.map((photo) => (
@@ -25,7 +25,16 @@ import { history, historyPhotos } from "../data/history";
       history.map((entry) => (
         <article class="history-item">
           <time datetime={entry.when}>{entry.when}</time>
-          <p>{entry.text}</p>
+          <div>
+            <p>{entry.text}</p>
+            <details class="history-more">
+              <summary>
+                <span class="more-closed">Read more</span>
+                <span class="more-open">Close</span>
+              </summary>
+              {entry.more.map((paragraph) => <p>{paragraph}</p>)}
+            </details>
+          </div>
         </article>
       ))
     }
