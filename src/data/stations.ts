@@ -7,6 +7,8 @@ export interface Talkgroup {
   id: string;
   slot: string;
   name: string;
+  /** Present on the repeater only some of the time. */
+  optional?: boolean;
 }
 
 export interface Station {
@@ -71,6 +73,7 @@ export const stations: Station[] = [
       { id: "2350", slot: "2", name: "UK ChatterBOX" },
       { id: "23590", slot: "2", name: "East Midlands" },
       { id: "23591", slot: "2", name: "Nottinghamshire Link" },
+      { id: "23516", slot: "2", name: "TGIF 116", optional: true },
     ],
     licence: [
       { label: "Keeper", value: "M0VUB" },

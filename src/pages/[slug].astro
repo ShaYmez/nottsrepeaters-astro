@@ -84,7 +84,10 @@ const { station } = Astro.props;
               <tr>
                 <td>{group.id}</td>
                 <td>{group.slot}</td>
-                <td>{group.name}</td>
+                <td>
+                  {group.name}
+                  {group.optional && ". Optional, sometimes static."}
+                </td>
               </tr>
             ))}
           </tbody>
