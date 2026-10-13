@@ -17,7 +17,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
@@ -33,7 +33,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url);
     <header class="site-header">
       <div class="wrap bar">
         <a class="brand" href="/">
-          <span class="mark">NR</span>
+          <span class="mark">
+            <img src="/logo.png" alt="" width="663" height="684" />
+          </span>
           <span>
             <strong>{site.name}</strong>
             <small>{site.domain}</small>
