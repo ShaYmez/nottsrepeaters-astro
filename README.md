@@ -1,4 +1,4 @@
-# Notts Repeaters
+# Nottingham Repeaters
 
 Static site for GB7NR, GB3NF, and GB3NM. It replaces the public pages on gb7nr.co.uk and gb3nf.co.uk.
 

@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import FactList from "../components/FactList.astro";
+import { stationJsonLd } from "../data/seo";
 import { stations, type Station } from "../data/stations";
 
 interface Props {
@@ -20,6 +21,7 @@ const { station } = Astro.props;
 <Base
   title={station.callsign}
   description={`${station.callsign} ${station.mode}. Output ${station.outputMHz} MHz, input ${station.inputMHz} MHz.`}
+  structuredData={[stationJsonLd(station)]}
 >
   <p class="kicker">{station.band} · {station.channel} · {station.mode}</p>
   <h1>{station.callsign}</h1>

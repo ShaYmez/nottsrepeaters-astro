@@ -1,0 +1,7 @@
+# Search engines and AI crawlers are welcome.
+User-agent: *
+Allow: /
+
+# Plain-text summary for language models: https://nottsrepeaters.org/llms.txt
+
+Sitemap: https://nottsrepeaters.org/sitemap.xml

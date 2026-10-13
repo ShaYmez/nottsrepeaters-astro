@@ -1,15 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
 import StationCard from "../components/StationCard.astro";
+import { stationListJsonLd } from "../data/seo";
 import { site } from "../data/site";
 import { stations } from "../data/stations";
 ---
 
-<Base title={site.name}>
+<Base title={site.name} structuredData={[stationListJsonLd(stations)]}>
   <p class="kicker">Nottingham</p>
   <h1>Three repeaters.</h1>
   <p class="lead">
-    GB7NR, GB3NF, and GB3NM. DMR and D-Star on 70cm, AllStar on 2m, and a standalone FM box on 70cm.
+    Nottingham Repeaters publishes GB7NR, GB3NF, and GB3NM. DMR and D-Star on 70cm, AllStar on 2m, and a standalone FM box on 70cm.
   </p>
   <div class="station-grid">
     {stations.map((station) => <StationCard station={station} />)}

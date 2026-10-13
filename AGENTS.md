@@ -1,4 +1,4 @@
-# Notts Repeaters
+# Nottingham Repeaters
 
 Public site for three Nottingham repeaters kept by M0VUB.
 

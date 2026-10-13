@@ -1,0 +1,45 @@
+# Nottingham Repeaters
+
+> Programming details for the Nottingham amateur radio repeaters GB7NR, GB3NF, and GB3NM. Keeper M0VUB. https://nottsrepeaters.org
+
+This site replaces the public pages that were on gb7nr.co.uk and gb3nf.co.uk. The ETCC record withholds the exact site for GB3NF and GB3NM, so those locations are not published here.
+
+## GB7NR
+
+- Page: https://nottsrepeaters.org/gb7nr/
+- 70cm DMR and D-Star, channel DVU35, on air
+- Output 439.4375 MHz, input 430.4375 MHz, offset −9 MHz
+- Colour code 1, DMR ID 235287
+- DMR on SystemX. D-Star linked to XLX248 module P
+- Hardware: MMDVM on Motorola radios, Pi-Star
+- Coverage: Nottingham, locator IO92KX
+- Static talkgroups: TG 235 slot 1 (235 Alive), TG 2350 slot 2 (UK ChatterBOX), TG 23590 slot 2 (East Midlands), TG 23591 slot 2 (Nottinghamshire Link). TG 23516 slot 2 (TGIF 116) is optional and only sometimes static.
+- Keeper M0VUB. ETCC record 3855. ERP 14 dBW. Antenna height 10 m above ground. NoV review 13 March 2028.
+- Dashboards: https://gb7nr.nottsrepeaters.org , https://dmr.freestar.network/legacy , https://xlx248.freestar.network
+
+## GB3NF
+
+- Page: https://nottsrepeaters.org/gb3nf/
+- 2m FM, channel RV50, AllStar node 40070, on air
+- Output 145.6250 MHz, input 145.0250 MHz, offset −0.6 MHz
+- CTCSS 77.0 Hz, toneburst 1750 Hz, narrow deviation 2.5 kHz (12.5 kHz)
+- Links only to the FreeSTAR hub, node 2196. Usually linked, and dropped when there is QRM. DTMF is switched off.
+- Coverage: Nottingham and the surrounding area. Locator IO92, exact site withheld.
+- Keeper M0VUB. ETCC record 4294. ERP 8.8 dBW. NoV review 20 July 2026.
+
+## GB3NM
+
+- Page: https://nottsrepeaters.org/gb3nm/
+- Standalone 70cm FM talkthrough, channel RB07, on air
+- Output 433.1750 MHz, input 434.7750 MHz, offset +1.6 MHz
+- CTCSS 71.9 Hz, wide deviation 25 kHz
+- Motorola DR3000. DMR on this radio is switched off. Programme the channel as 25 kHz wide.
+- CTCSS drops between overs, so tone squelch hides the pips.
+- Coverage: Nottingham and the surrounding area. Locator IO92, exact site withheld.
+- Keeper M0VUB. ETCC record 4908. ERP 11 dBW.
+
+## Other pages
+
+- [About](https://nottsrepeaters.org/about/): the three stations and where the published figures come from.
+- [History](https://nottsrepeaters.org/history/): how GB3NM, GB3NF, and GB7NR came to be, from 1977 to 2026.
+- [Support](https://nottsrepeaters.org/support/): fault reports and coverage notes go to shane@freestar.network.

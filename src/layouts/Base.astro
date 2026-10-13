@@ -5,28 +5,72 @@ import { nav, site } from "../data/site";
 interface Props {
   title: string;
   description?: string;
+  robots?: string;
+  structuredData?: Record<string, unknown>[];
 }
 
-const { title, description = site.description } = Astro.props;
-const pageTitle = title === site.name ? title : `${title} · ${site.name}`;
+const { title, description = site.description, robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1", structuredData = [] } = Astro.props;
+const pageTitle = title === site.name ? `${site.name}: GB7NR, GB3NF and GB3NM` : `${title} · ${site.name}`;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
-const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url);
+const origin = Astro.site ?? site.url;
+const canonical = new URL(Astro.url.pathname, origin);
+const image = new URL("/og.jpg", origin);
+const logo = new URL("/logo.png", origin);
+const structured = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      name: site.name,
+      url: site.url,
+      description: site.description,
+      inLanguage: "en-GB",
+      publisher: { "@id": `${site.url}/#keeper` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${site.url}/#keeper`,
+      name: site.name,
+      url: site.url,
+      email: site.email,
+      logo: logo.href,
+    },
+    ...structuredData,
+  ],
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="author" content={`${site.keeper}, ${site.name}`} />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
-    <title>{pageTitle}</title>
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Nottingham Repeaters patch, with GB7NR, GB3NF, and GB3NM" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="theme-color" content="#f3efe6" />
+    <script type="application/ld+json" set:html={JSON.stringify(structured).replaceAll("<", "\\u003c")} />
   </head>
   <body>
     <a class="skip" href="#content">Skip to content</a>
@@ -34,7 +78,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url);
       <div class="wrap bar">
         <a class="brand" href="/">
           <span class="mark">
-            <img src="/logo.png" alt="" width="663" height="684" />
+            <img src="/logo.webp" alt="" width="420" height="433" />
           </span>
           <span>
             <strong>{site.name}</strong>
