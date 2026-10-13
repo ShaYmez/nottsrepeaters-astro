@@ -1,0 +1,95 @@
+---
+import Base from "../layouts/Base.astro";
+import FactList from "../components/FactList.astro";
+import { stations, type Station } from "../data/stations";
+
+interface Props {
+  station: Station;
+}
+
+export function getStaticPaths() {
+  return stations.map((station) => ({
+    params: { slug: station.slug },
+    props: { station },
+  }));
+}
+
+const { station } = Astro.props;
+---
+
+<Base
+  title={station.callsign}
+  description={`${station.callsign} ${station.mode}. Output ${station.outputMHz} MHz, input ${station.inputMHz} MHz.`}
+>
+  <p class="kicker">{station.band} · {station.channel} · {station.mode}</p>
+  <h1>{station.callsign}</h1>
+  <p class="status">{station.status}</p>
+  <p class="lead">{station.summary}</p>
+  <div class="pair">
+    <p>
+      <span>Output</span>
+      <strong>{station.outputMHz} <em>MHz</em></strong>
+    </p>
+    <p>
+      <span>Input</span>
+      <strong>{station.inputMHz} <em>MHz</em></strong>
+    </p>
+  </div>
+  <div class="split">
+    <section class="panel" aria-labelledby="programming">
+      <h2 id="programming">Programming</h2>
+      <FactList facts={station.programming} />
+    </section>
+    <section class="panel" aria-labelledby="operation">
+      <h2 id="operation">On the air</h2>
+      <FactList facts={station.operation} />
+    </section>
+  </div>
+  {
+    station.talkgroups && (
+      <section class="section-head" aria-labelledby="talkgroups">
+        <h2 id="talkgroups">Static talkgroups</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Talkgroup</th>
+              <th>Slot</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {station.talkgroups.map((group) => (
+              <tr>
+                <td>{group.id}</td>
+                <td>{group.slot}</td>
+                <td>{group.name}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    )
+  }
+  {
+    station.notice && (
+      <aside class="notice">
+        <p>{station.notice}</p>
+      </aside>
+    )
+  }
+  <section class="section-head" aria-labelledby="licence">
+    <h2 id="licence">Licence</h2>
+    <FactList facts={station.licence} />
+    <p>
+      <a href={station.licenceHref}>ETCC record for {station.callsign}</a>
+    </p>
+  </section>
+  {
+    station.links && (
+      <section aria-labelledby="links">
+        <h2 id="links">Links</h2>
+        <FactList facts={station.links} />
+      </section>
+    )
+  }
+</Base>

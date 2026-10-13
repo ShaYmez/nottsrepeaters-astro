@@ -1,0 +1,31 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+
+<Base
+  title="About"
+  description="Notts Repeaters publishes programming details for GB7NR, GB3NF, and GB3NM."
+>
+  <p class="kicker">The group</p>
+  <h1>About</h1>
+  <p class="lead">
+    One site for the three Nottingham repeaters kept by {site.keeper}.
+  </p>
+  <div class="stack">
+    <p>
+      GB7NR is the 70cm DMR and D-Star repeater, running Pi-Star. DMR is on SystemX and D-Star is on XLX248 module P. GB3NF is the 2m FM
+      repeater, with AllStar links made by the keeper. GB3NM is the standalone
+      70cm FM talkthrough.
+    </p>
+    <p>
+      All three are licensed through the {site.region}, RSGB region 13. The ETCC
+      record withholds the exact site for GB3NF and GB3NM, so this site publishes
+      the locator square and the frequencies you need to programme a radio.
+    </p>
+    <p>
+      Frequencies on the station pages follow the ETCC records checked on 13 October
+      2026. When a repeater changes, the station page is the page that changes.
+    </p>
+  </div>
+</Base>

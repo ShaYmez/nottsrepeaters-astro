@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+
+const mailto = `mailto:${site.email}?subject=${encodeURIComponent("Notts Repeaters")}`;
+---
+
+<Base title="Support" description="Contact the keeper of GB7NR, GB3NF, and GB3NM.">
+  <p class="kicker">Keeper {site.keeper}</p>
+  <h1>Support</h1>
+  <p class="lead">
+    Fault reports, coverage notes, and donation offers go to the keeper.
+  </p>
+  <a class="button" href={mailto}>Email {site.email}</a>
+  <p>
+    Include your callsign, which repeater you were using, and the time you heard
+    the problem. Coverage reports are useful with a town and whether you were
+    mobile or on a home station.
+  </p>
+  <p>
+    Donations pay for power, site costs, and repairs. Email the keeper to arrange
+    one. There is no subscription.
+  </p>
+</Base>

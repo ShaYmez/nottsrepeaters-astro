@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+import StationCard from "../components/StationCard.astro";
+import { site } from "../data/site";
+import { stations } from "../data/stations";
+---
+
+<Base title={site.name}>
+  <p class="kicker">Nottingham</p>
+  <h1>Three repeaters.</h1>
+  <p class="lead">
+    GB7NR, GB3NF, and GB3NM. DMR and D-Star on 70cm, AllStar on 2m, and a standalone FM box on 70cm.
+  </p>
+  <div class="station-grid">
+    {stations.map((station) => <StationCard station={station} />)}
+  </div>
+  <h2 class="section-head">Which repeater</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Your radio</th>
+        <th>Station</th>
+        <th>Listen on</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DMR or D-Star, 70cm</td>
+        <td><a href="/gb7nr">GB7NR</a></td>
+        <td>439.4375 MHz. DMR colour code 1. D-Star on XLX248 P.</td>
+      </tr>
+      <tr>
+        <td>FM, 2m</td>
+        <td><a href="/gb3nf">GB3NF</a></td>
+        <td>145.6250 MHz, CTCSS 77.0 Hz</td>
+      </tr>
+      <tr>
+        <td>FM, 70cm</td>
+        <td><a href="/gb3nm">GB3NM</a></td>
+        <td>433.1750 MHz, CTCSS 71.9 Hz</td>
+      </tr>
+    </tbody>
+  </table>
+</Base>

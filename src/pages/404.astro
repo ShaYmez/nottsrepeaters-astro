@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro";
+import { stations } from "../data/stations";
+---
+
+<Base title="Page not found" description="That page is not on Notts Repeaters.">
+  <p class="kicker">404</p>
+  <h1>Page not found</h1>
+  <p class="lead">The station pages are the place to programme a radio.</p>
+  <ul class="link-list">
+    {
+      stations.map((station) => (
+        <li>
+          <a href={`/${station.slug}`}>{station.callsign}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

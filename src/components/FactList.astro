@@ -1,0 +1,30 @@
+---
+import type { Fact } from "../data/stations";
+
+interface Props {
+  facts: Fact[];
+}
+
+const { facts } = Astro.props;
+
+function isUrl(value: string) {
+  return value.startsWith("https://");
+}
+---
+
+<dl class="facts">
+  {
+    facts.map((fact) => (
+      <div>
+        <dt>{fact.label}</dt>
+        <dd>
+          {isUrl(fact.value) ? (
+            <a href={fact.value}>{fact.value.replace(/^https:\/\//, "")}</a>
+          ) : (
+            fact.value
+          )}
+        </dd>
+      </div>
+    ))
+  }
+</dl>

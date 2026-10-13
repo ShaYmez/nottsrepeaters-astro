@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import { history } from "../data/history";
+---
+
+<Base
+  title="History"
+  description="How GB7NR, GB3NF, and GB3NM came to be the Nottingham repeater group."
+>
+  <p class="kicker">2019–2026</p>
+  <h1>History</h1>
+  <p class="lead">A short record of the three stations. The station pages describe them as they are now.</p>
+  <div class="stack">
+    {
+      history.map((entry) => (
+        <article class="history-item">
+          <time datetime={entry.when}>{entry.when}</time>
+          <p>{entry.text}</p>
+        </article>
+      ))
+    }
+  </div>
+</Base>
