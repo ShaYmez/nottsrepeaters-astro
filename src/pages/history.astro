@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { history } from "../data/history";
+import { history, historyPhotos } from "../data/history";
 ---
 
 <Base
@@ -10,6 +10,16 @@ import { history } from "../data/history";
   <p class="kicker">2019–2026</p>
   <h1>History</h1>
   <p class="lead">A short record of the three stations. The station pages describe them as they are now.</p>
+  <div class="photo-grid">
+    {
+      historyPhotos.map((photo) => (
+        <figure class="photo">
+          <img src={photo.src} alt={photo.alt} />
+          <figcaption>{photo.caption}</figcaption>
+        </figure>
+      ))
+    }
+  </div>
   <div class="stack">
     {
       history.map((entry) => (

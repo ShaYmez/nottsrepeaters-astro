@@ -25,6 +25,8 @@ export interface Station {
   licenceHref: string;
   links?: Fact[];
   talkgroups?: Talkgroup[];
+  photo?: { src: string; alt: string; caption: string };
+  embed?: { src: string; title: string };
   /** Shown on the station page when a programming warning is needed. */
   notice?: string;
 }
@@ -37,7 +39,7 @@ export interface Station {
  * on 13 Oct 2026. Names are from the SystemX dashboard.
  *
  * Held back until confirmed:
- * - GB3NF's own AllStar node number. FreeSTAR hub 2196 is a hub, not this repeater.
+ * - GB3NF links only to FreeSTAR hub 2196. Its own AllStar node number is not published.
  * - EchoLink GB3NF-R, node 564542, from the old gb3nf.co.uk services page.
  * - Precise site coordinates. GB3NF and GB3NM are withheld on the ETCC record.
  */
@@ -90,7 +92,7 @@ export const stations: Station[] = [
     band: "2m",
     channel: "RV50",
     mode: "FM AllStar",
-    summary: "2m FM repeater. AllStar links are made by the keeper.",
+    summary: "2m FM repeater. It links to the FreeSTAR hub, AllStar node 2196.",
     outputMHz: "145.6250",
     inputMHz: "145.0250",
     status: "On air",
@@ -102,10 +104,15 @@ export const stations: Station[] = [
       { label: "Channel", value: "RV50" },
     ],
     operation: [
-      { label: "Linking", value: "AllStar, keeper controlled" },
+      { label: "Hub", value: "FreeSTAR 2196" },
+      { label: "Connection", value: "Usually linked. Dropped when there is QRM." },
       { label: "User control", value: "DTMF is switched off" },
       { label: "Coverage", value: "Nottingham and the surrounding area" },
     ],
+    embed: {
+      src: "https://masterdash.freestar.network/allmon3/index.html#2196,2167,54072,63061",
+      title: "FreeSTAR AllStar dashboard, including hub 2196",
+    },
     licence: [
       { label: "Keeper", value: "M0VUB" },
       { label: "ETCC record", value: "4294" },
@@ -114,6 +121,11 @@ export const stations: Station[] = [
       { label: "NoV review", value: "20 July 2026" },
     ],
     licenceHref: "https://ukrepeater.net/my_repeater.php?id=4294",
+    photo: {
+      src: "/photos/gb3nf-rack.jpg",
+      alt: "GB3NF rack with the G1SLE MkII repeater controller and base station radio",
+      caption: "GB3NF rack. G1SLE MkII controller, with the base station radio below it.",
+    },
   },
   {
     slug: "gb3nm",
@@ -128,7 +140,7 @@ export const stations: Station[] = [
     programming: [
       { label: "Offset", value: "+1.6 MHz" },
       { label: "CTCSS", value: "71.9 Hz" },
-      { label: "Deviation", value: "Narrow, 2.5 kHz (12.5 kHz)" },
+      { label: "Deviation", value: "Wide, 25 kHz" },
       { label: "Channel", value: "RB07" },
     ],
     operation: [
@@ -144,7 +156,12 @@ export const stations: Station[] = [
     ],
     licenceHref: "https://ukrepeater.net/my_repeater.php?id=4908",
     notice:
-      "DMR on this DR3000 is switched off. Programme it as narrow FM.",
+      "DMR on this DR3000 is switched off. Programme the channel as 25 kHz wide.",
+    photo: {
+      src: "/photos/gb3nm-dr3000.jpg",
+      alt: "Motorola DR3000 repeater labelled GB3NM on 433.175 MHz",
+      caption: "GB3NM Motorola DR3000 talkthrough, labelled 433.175 MHz.",
+    },
   },
 ];
 

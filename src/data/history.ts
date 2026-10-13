@@ -3,6 +3,19 @@ export interface HistoryEntry {
   text: string;
 }
 
+export const historyPhotos = [
+  {
+    src: "/photos/gb3nf-2006.jpg",
+    alt: "The GB3NF equipment cabinet in 2006, beside a desktop computer",
+    caption: "GB3NF in 2006, in the original cabinet.",
+  },
+  {
+    src: "/photos/gb3nf-mast.jpg",
+    alt: "Looking up inside the lattice mast at the original GB3NF site",
+    caption: "The mast at Dorket Head, where GB3NF started.",
+  },
+];
+
 export const history: HistoryEntry[] = [
   {
     when: "2005",

@@ -46,6 +46,28 @@ const { station } = Astro.props;
     </section>
   </div>
   {
+    station.embed && (
+      <section class="section-head" aria-labelledby="dashboard">
+        <h2 id="dashboard">FreeSTAR dashboard</h2>
+        <p>
+          Node 2196 is the hub this repeater uses. The other nodes on this dashboard are FreeSTAR hubs.
+        </p>
+        <iframe class="dash" src={station.embed.src} title={station.embed.title} loading="lazy" />
+        <p>
+          <a href={station.embed.src}>Open the FreeSTAR dashboard</a>
+        </p>
+      </section>
+    )
+  }
+  {
+    station.photo && (
+      <figure class="photo">
+        <img src={station.photo.src} alt={station.photo.alt} />
+        <figcaption>{station.photo.caption}</figcaption>
+      </figure>
+    )
+  }
+  {
     station.talkgroups && (
       <section class="section-head" aria-labelledby="talkgroups">
         <h2 id="talkgroups">Static talkgroups</h2>

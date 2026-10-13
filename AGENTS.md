@@ -3,8 +3,8 @@
 Public site for three Nottingham repeaters kept by M0VUB.
 
 - GB7NR: 70cm DMR and D-Star. MMDVM on Motorola radios, Pi-Star. DMR on SystemX. D-Star on XLX248 module P. Output 439.4375 MHz, input 430.4375 MHz, colour code 1, DMR ID 235287. Static talkgroups: TG 235 slot 1, TG 2350 slot 2, TG 23590 slot 2, TG 23591 slot 2. Dashboards: https://gb7nr.nottsrepeaters.org, https://dmr.freestar.network/legacy, https://xlx248.freestar.network. Keeper email: shane@freestar.network.
-- GB3NF: 2m FM AllStar. Output 145.6250 MHz, input 145.0250 MHz, CTCSS 77.0 Hz. Keeper-controlled links. DTMF is off.
-- GB3NM: standalone 70cm FM talkthrough. Motorola DR3000. Output 433.1750 MHz, input 434.7750 MHz, CTCSS 71.9 Hz. Narrow FM. DMR is switched off.
+- GB3NF: 2m FM AllStar. Output 145.6250 MHz, input 145.0250 MHz, CTCSS 77.0 Hz. Links only to FreeSTAR hub 2196. Usually connected, and dropped when there is QRM. DTMF is off. Dashboard: https://masterdash.freestar.network/allmon3/index.html#2196,2167,54072,63061
+- GB3NM: standalone 70cm FM talkthrough. Motorola DR3000. Output 433.1750 MHz, input 434.7750 MHz, CTCSS 71.9 Hz. Wide FM, 25 kHz. DMR is switched off.
 
 ## Editing rules
 
@@ -19,6 +19,6 @@ Public site for three Nottingham repeaters kept by M0VUB.
 
 ## Open items
 
-- GB3NF AllStar node number. Hub 2196 is FreeSTAR, not this repeater.
+- GB3NF's own AllStar node number. It links only to FreeSTAR hub 2196.
 - Whether EchoLink node 564542 (GB3NF-R) is still proxied.
 - A group donation link. Contact is shane@freestar.network.

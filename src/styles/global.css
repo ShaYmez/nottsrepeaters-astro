@@ -345,6 +345,38 @@ td a {
   padding: 0.9rem 1rem;
 }
 
+.photo {
+  margin: 1.5rem 0 0;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.photo figcaption {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.dash {
+  display: block;
+  width: 100%;
+  height: 720px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
 .notice p:last-child {
   margin-bottom: 0;
 }
@@ -397,7 +429,8 @@ td a {
   .station-grid,
   .split,
   .facts,
-  .pair {
+  .pair,
+  .photo-grid {
     grid-template-columns: 1fr;
   }
 
