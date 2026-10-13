@@ -6,8 +6,8 @@
   --panel: #fffdf8;
   --signal: #9a3412;
   --ok: #166534;
-  --sans: "IBM Plex Sans", "Segoe UI", sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --sans: Tahoma, Verdana, "Segoe UI", sans-serif;
+  --mono: Tahoma, Verdana, "Segoe UI", sans-serif;
   color-scheme: light;
 }
 
