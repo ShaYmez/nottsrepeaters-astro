@@ -18,8 +18,17 @@ export const historyPhotos = [
 ];
 
 /**
- * Sources, checked 13 Oct 2026:
- * - 1977: Geoff G4AFJ, Leicestershire Repeater Group, from RSGB repeater records.
+ * Sources, checked 14 Oct 2026:
+ * - 1977 on-air date: Geoff G4AFJ, Leicestershire Repeater Group, from RSGB repeater records.
+ *   An earlier note that GB3NM opened on RB07 was wrong. Nothing in that account,
+ *   or elsewhere online, gives GB3NM a 1977 CTCSS tone. Phase 2 access was a
+ *   1750 Hz toneburst: the GB3LE provisional specification for the same batch
+ *   (dave-cushman.net) requires 1750 Hz. The RSGB Repeater Management Committee
+ *   later treated CTCSS as optional and additional. Nottinghamshire's tone in
+ *   that plan is 71.9 Hz. CTCSS became mandatory for new UK repeaters in 2004.
+ * - 1977–2005, GB3NM: an email to the keeper, 14 October 2026. Original output RB06,
+ *   keeper Mike G2SP (SK), the Ransom Gardens broadcast mast, 15 W ERP, the move
+ *   to RB07 in 1989, and the closure at that site in 2005.
  * - 1981–1995: Mike G4HXT, who switched the New Forest GB3NF on.
  * - 2005–2020: the keeper's account on gb3nf.co.uk/about/, and Nick G4IRX.
  * - 2019–2024: the GB7NR news written at the time.
@@ -31,10 +40,10 @@ export const historyPhotos = [
 export const history: HistoryEntry[] = [
   {
     when: "1977",
-    text: "GB3NM comes on the air on 13 October, with GB3DY. It is Nottingham's 70cm repeater, on RB07.",
+    text: "GB3NM comes on the air on 13 October, with GB3DY. It is Nottingham's 70cm repeater, on RB06, kept by Mike, G2SP.",
     more: [
       "Urban 2m repeaters had become difficult to license, so the RSGB opened a plan for smaller UHF boxes. The first of them were licensed in 1976. The next batch waited until October 1977.",
-      "GB3NM and GB3DY came on the air on 13 October. GB3LE at Leicester followed on Saturday 15 October. GB3NM took channel RB07, 433.175 MHz, and opened on CTCSS 71.9 Hz.",
+      "GB3NM and GB3DY came on the air on 13 October. GB3LE at Leicester followed on Saturday 15 October. GB3NM opened on RB06, 433.150 MHz, with an ERP of 15 watts. Access was by a 1750 Hz toneburst, the method specified for that batch of repeaters. The keeper was Mike, G2SP, now a silent key. The antenna was halfway up the Ransom Gardens commercial broadcast mast.",
     ],
   },
   {
@@ -48,11 +57,19 @@ export const history: HistoryEntry[] = [
     ],
   },
   {
+    when: "1989",
+    text: "GB3NM moves from RB06, 433.150 MHz, to RB07, 433.175 MHz.",
+    more: [
+      "GB3NM had been on RB06, 433.150 MHz, since it came on the air in 1977. In 1989 the output changed to 433.175 MHz, channel RB07, which it still uses.",
+    ],
+  },
+  {
     when: "2005",
-    text: "The callsign is licensed again for Nottingham and run by the Midlands Repeater Group from Dorket Head. The radio is a Philips/Simoco FX5000 in a PYE L300 cabinet. That site does not last.",
+    text: "The GB3NF callsign is licensed again for Nottingham and run by the Midlands Repeater Group from Dorket Head. The radio is a Philips/Simoco FX5000 in a PYE L300 cabinet. That site does not last. GB3NM is taken off the air at Ransom Gardens.",
     more: [
       "The callsign came back in 2005, this time for Nottingham. The Midlands Repeater Group put GB3NF on the air at Dorket Head, the highest point in the city.",
       "The radio was a Philips/Simoco FX5000, built into a vintage PYE L300 cabinet from the old Bowman telephone exchange. Dorket Head did not last. After the move, the FX5000 was no longer fit to use.",
+      "GB3NM was taken off the air from the Ransom Gardens site in 2005. It had been on that commercial broadcast mast since 1977.",
     ],
   },
   {
